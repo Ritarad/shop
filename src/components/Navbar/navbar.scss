@@ -1,0 +1,26 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--dark-bg);
+  color: var(--light-font);
+  margin-bottom: 2rem;
+  ul {
+    display: flex;
+    list-style: none;
+    column-gap: 2rem;
+
+    li {
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--orange-100);
+      }
+      &:active {
+        color: var(--orange-500);
+      }
+    }
+  }
+}

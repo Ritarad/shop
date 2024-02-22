@@ -1,0 +1,24 @@
+.main {
+  &-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgb(184, 184, 16);
+
+    // @include mixins.tablet {
+    //   padding: 0 2rem;
+    // }
+  }
+  &-action-btn {
+    width: 100%;
+  }
+}
+.card {
+  height: 15rem;
+  width: 13rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: rgb(56, 86, 10);
+}

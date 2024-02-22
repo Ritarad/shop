@@ -1,0 +1,29 @@
+.card {
+  height: 15rem;
+  width: 13rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.favorite-icon {
+  grid-area: favorite;
+  margin-left: auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #859b9a;
+}
+h3 {
+  grid-area: title;
+  font-size: 1.5rem;
+  color: gold;
+}
+p {
+  grid-area: description;
+  font-size: 1rem;
+}
+button {
+  grid-area: button;
+  background-color: green;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}

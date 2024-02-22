@@ -1,0 +1,9 @@
+@import '~bootstrap/scss/bootstrap';
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgb(184, 184, 16);
+}
