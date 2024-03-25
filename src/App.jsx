@@ -39,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main handleAddToCard={handleAddToCard} />} />
         <Route
-          path="/my-card"
+          path="/my-cart"
           element={
             <MyCard
               cardData={cardData}

@@ -13,7 +13,7 @@ const Button = ({ children, type, onClick }) => {
   }
 
   return (
-    <button onClick={onClick} className={styles}>
+    <button onClick={onClick} className={styles} title="button">
       <span>{children}</span> <i />
     </button>
   );

@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import './user.scss';
 
 function User() {
   const [user, setUser] = useState(null);
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
-  console.log(user);
+
   useEffect(() => {
     const fetchUser = async () => {
       setLoading(true);
