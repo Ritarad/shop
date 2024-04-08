@@ -1,0 +1,28 @@
+.spinner-size {
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+.offcanvas-header,
+.offcanvas-body {
+  background-color: grey;
+  color: greenyellow;
+}
+
+.offcanvas-header {
+  padding-bottom: 0 !important;
+  .offcanvas-title {
+    color: green;
+  }
+}
+
+.offcanvas-body {
+  h5 {
+    color: orange;
+    line-height: 2rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    border-bottom: 1px solid var(--orange-300);
+  }
+}

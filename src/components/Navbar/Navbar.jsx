@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 // components
 import User from '../User/User';
 import AdminUser from '../AdminUser/AdminUser';
@@ -7,6 +8,7 @@ import AdminUser from '../AdminUser/AdminUser';
 import './navbar.scss';
 
 function Navbar() {
+  const { token } = useAuth();
   return (
     <nav className="nav-container">
       <h1>My Shop</h1>
@@ -20,11 +22,13 @@ function Navbar() {
         <li>
           <NavLink to="/favorites">Favorite</NavLink>
         </li>
-        <li>
-          <NavLink to="/admin">Admin</NavLink>
-        </li>
+        {token && (
+          <li>
+            <NavLink to="/admin">Admin</NavLink>
+          </li>
+        )}
       </ul>
-      <User />
+      {/* <User /> */}
       <AdminUser />
     </nav>
   );

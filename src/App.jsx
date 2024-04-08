@@ -1,56 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { mockData } from './mockData';
+import useAuth from './hooks/useAuth';
 // components
 import Navbar from './components/Navbar/Navbar';
 import Main from './components/Main/Main';
-import MyCard from './components/MyCard/MyCard';
+import MyCart from './components/MyCart/MyCart';
 import Favorites from './components/Favorites/Favorites';
 import Admin from './components/Admin/Admin';
 
 import './App.scss';
 
 function App() {
-  const [cardData, setCardData] = useState([]);
-  const [data, setData] = useState(mockData);
-
-  const handleAddToCard = (item) => {
-    setCardData([...cardData, item]);
-
-    const filteredData = data.filter(
-      (dataItem) => dataItem.title !== item.title
-    );
-
-    setData(filteredData);
-  };
-
-  const handleRemoveFromCard = (item) => {
-    setData([item, ...data]);
-
-    const filteredCardData = cardData.filter(
-      (dataItem) => dataItem.title !== item.title
-    );
-
-    setCardData(filteredCardData);
-  };
-
+  const { token } = useAuth();
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Main handleAddToCard={handleAddToCard} />} />
-        <Route
-          path="/my-cart"
-          element={
-            <MyCard
-              cardData={cardData}
-              setCardData={setCardData}
-              handleRemoveFromCard={handleRemoveFromCard}
-            />
-          }
-        />
+        <Route path="/" element={<Main />} />
+        <Route path="/my-cart" element={<MyCart />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/admin" element={<Admin />} />
+        {token && <Route path="/admin" element={<Admin />} />}
       </Routes>
     </>
   );
